@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="app_name">DBSampleActivity</string>
+    <string name="title_entry_detail">Entry Detail</string>
+    <string name="title_entry_list">Entries</string>
+
+</resources>
