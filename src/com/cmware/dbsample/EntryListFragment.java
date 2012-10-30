@@ -16,7 +16,7 @@ public class EntryListFragment extends ListFragment {
 
     private Callbacks mCallbacks = sDummyCallbacks;
     private int mActivatedPosition = ListView.INVALID_POSITION;
-    private EntryManager entryManager;
+    private final EntryManager entryManager;
 
     public interface Callbacks {
 
@@ -30,7 +30,7 @@ public class EntryListFragment extends ListFragment {
     };
 
     public EntryListFragment() {
-        entryManager = new EntryManager();
+        entryManager = EntryManager.getInstance();
     }
 
     @Override
@@ -67,7 +67,7 @@ public class EntryListFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView listView, View view, int position, long id) {
         super.onListItemClick(listView, view, position, id);
-        mCallbacks.onItemSelected(entryManager.getEntryAt(position).getId().toString());
+        mCallbacks.onItemSelected(Integer.toString(position));
     }
 
     @Override

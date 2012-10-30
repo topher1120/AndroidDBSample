@@ -11,7 +11,13 @@ public class EntryManager {
 
     private List<Entry> entryList = new ArrayList<Entry>();
 
-    public EntryManager() {
+    private static final EntryManager INSTANCE = new EntryManager();
+
+    public static EntryManager getInstance() {
+        return INSTANCE;
+    }
+
+    private EntryManager() {
         initList();
     }
 
